@@ -7,7 +7,7 @@ This project shows a simple natvis file which does the job. I dropped it in C:\U
 
 My image for this project was: template <class T, unsigned int Cdepth> class Image
 
-You can see in the file how to deal with 
+You can see in the file how to deal with templates, and what variables need to be defined. The alternate names don't seem to do anything, but I left them in.
 
 # Some Notes
 unique_ptr<ImageType> myvar; does not work. But, you can go into the Watch and look at myvar._Myptr
