@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+ 
+  <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1"
+                MenuName="Add to Image Watch"/>
+ 
+  <Type Name="Image&lt;*&gt;">
+    <AlternativeType Name="image_U8C4"/>
+	<AlternativeType Name="image_F32C3"/>
+    <AlternativeType Name="image_U16C4"/>
+    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
+ 
+  <Type Name="Image&lt;*,*&gt;">
+    <Expand>
+	  <Synthetic Name="[type]" Condition='strcmp("unsigned char", "$T1") == 0'>
+        <DisplayString>UINT8</DisplayString>
+      </Synthetic>
+      <Synthetic Name="[type]" Condition='strcmp("float", "$T1") == 0'>
+        <DisplayString>FLOAT32</DisplayString>
+      </Synthetic>
+	  <Synthetic Name="[type]" Condition='strcmp("unsigned short", "$T1") == 0'>
+        <DisplayString>UINT16</DisplayString>
+      </Synthetic>
+	  
+	  <Synthetic Name="[channels]" Condition='strcmp("4", "$T2") == 0'>
+        <DisplayString>BGRA</DisplayString>
+      </Synthetic>
+	  <Synthetic Name="[channels]" Condition='strcmp("3", "$T2") == 0'>
+        <DisplayString>BGR</DisplayString>
+      </Synthetic> 
+	  
+      <Item Name="[width]">width_</Item>
+      <Item Name="[height]">height_</Item>
+      <Item Name="[data]">data_</Item>
+      <Item Name="[stride]">width_*sizeof($T1)*$T2</Item>
+    </Expand>
+  </Type>  
+
+</AutoVisualizer>
