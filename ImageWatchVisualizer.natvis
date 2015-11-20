@@ -29,6 +29,9 @@
 	  <Synthetic Name="[channels]" Condition='strcmp("3", "$T2") == 0'>
         <DisplayString>BGR</DisplayString>
       </Synthetic> 
+      <Synthetic Name="[channels]" Condition='strcmp("1", "$T2") == 0'>
+        <DisplayString>1</DisplayString>
+      </Synthetic> 
 	  
       <Item Name="[width]">width_</Item>
       <Item Name="[height]">height_</Item>
